@@ -21,13 +21,13 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="{{route('products')}}" class="nav-link">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a href="sign-up.html" class="nav-link">Sign Up</a>
+                    <a href="{{route('preregister')}}" class="nav-link">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a href="sign-in.html" class="nav-link">Sign In</a>
+                    <a href="{{route('login')}}" class="nav-link">Sign In</a>
                 </li>
             </ul>
         </div>

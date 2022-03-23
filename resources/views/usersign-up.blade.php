@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <a class="navbar-brand" href="{{route('home')}}">say N2H</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,57 +20,79 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="{{route('products')}}" class="nav-link">Products</a>
+                    <a href="{{ route('products') }}" class="nav-link">Products</a>
                 </li>
+                @auth
                 <li class="nav-item">
-                    <a href="{{route('preregister')}}" class="nav-link">Sign Up</a>
+                    <a href="" class="nav-link">Your Name</a>
                 </li>
+                @endauth
+                @guest
                 <li class="nav-item">
-                    <a href="{{route('login')}}" class="nav-link">Sign In</a>
+                    <a href="{{ route('login' ) }}" class="nav-link">Sign In</a>
                 </li>
+                @endguest
             </ul>
         </div>
 
     </nav>
 
-
     <div class="container sign-up d-flex justify-content-center">
         <div class="card">
             <div class="card-body p-5">
-                <div class="card-title h4 text-center">Sign In</div>
-                <div class="mb-3">
-                    @if (session('status'))
-                    {{ session('status') }}
-                    @endif
-                </div>
-                <form action="{{ route('login') }}" method="post">
+                <div class="card-title h4 text-center">Sign Up</div>
+                <form action="{{ route('userregister') }}" method="post">
                     @csrf
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email" name="email">
-                        @error('email')
+                        <label for="full-name" class="form-label">Full name</label>
+                        <input type="text" class="form-control" id="full-name" placeholder="Full Name" name="name" value="{{ old('name') }}">
+                        @error('name')
                         <div class="">
                             {{$message}}
                         </div>
                         @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Username" name="username" value="{{ old('username') }}">
+                        @error('username')
+                        <div class="">
+                            {{$message}}
+                        </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                        @error('email')
+                <div class="">
+                    {{$message}}
+                </div>
+                @enderror
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                         @error('password')
-                        <div class="">
-                            {{$message}}
-                        </div>
-                        @enderror
+                <div class="">
+                    {{$message}}
+                </div>
+                @enderror
                     </div>
-                    <button type="submit" class="mb-3">login</button>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password_confirmation">
+                        @error('password_confirmation')
+                    <div class="">
+                        {{$message}}
+                    </div>
+                    @enderror
+                    </div>
+                    <button class="btn btn-secondary" type="submit">Register</button>
                 </form>
             </div>
         </div>
     </div>
-
-
-
 
 
 

@@ -21,12 +21,22 @@
                     <li class="nav-item">
                         <a href="{{ route('products') }}" class="nav-link">Products</a>
                     </li>
+                    @guest
                     <li class="nav-item">
-                        <a href="{{ route('signup') }}" class="nav-link">Sign Up</a>
+                        <a href="{{ route('preregister') }}" class="nav-link">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('signin') }}" class="nav-link">Sign In</a>
+                        <a href="{{ route('login') }}" class="nav-link">Sign In</a>
                     </li>
+                    @endguest
+                    @auth
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Your Name</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Logout</a>
+                    </li>
+                    @endauth
                 </ul>
             </div>
     </nav>
