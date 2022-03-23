@@ -65,7 +65,7 @@
             </div>
             <div class="col">
                 <div class="card h-100" style="width: 15rem;">
-                    <img src="img/Gino-Tomato-Paste-800g-Tin.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('img/Gino-Tomato-Paste-800g-Tin.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Tomato Paste</h5>
                         <p class="card-text">Quality Gino Tomato Paste</p>
