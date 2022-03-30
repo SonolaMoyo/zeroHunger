@@ -13,7 +13,7 @@
 <body>
 
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <a class="navbar-brand" href="{{route('home')}}">say N2H</a>
+        <a class="navbar-brand" href="{{route('home')}}">Zero Hunger</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Say N2H</title>
+    <title>Product</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="styles/style.css">
@@ -13,22 +13,29 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <a class="navbar-brand" href="{{ route('home') }}">say N2H</a>
+        <a class="navbar-brand" href="{{ route('home') }}">Zero Hunger</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
+                @auth
                 <li class="nav-item">
                     <a href="{{route('products')}}" class="nav-link">Products</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('preregister')}}" class="nav-link">Logout</a>
+                </li>
+                @endauth
+                @guest
                 <li class="nav-item">
                     <a href="{{route('preregister')}}" class="nav-link">Register</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('login')}}" class="nav-link">Sign In</a>
                 </li>
+                @endguest
             </ul>
         </div>
     </nav>
