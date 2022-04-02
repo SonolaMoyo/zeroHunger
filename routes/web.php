@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ProductlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,9 @@ Route::post('/companyregister', [RegisterController::class, 'storecompany']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 
-Route::get('/products', [ProductController::class, 'index'])->name('products');
+Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
+
+Route::get('/productlists', [ProductlistController::class, 'index'])->name('product');
 
 Route::get('/', function () {
     return view('home'); 

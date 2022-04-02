@@ -25,7 +25,10 @@
                     <a href="{{route('products')}}" class="nav-link">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('preregister')}}" class="nav-link">Logout</a>
+                    <form action="{{ route('logout') }}" method="post" class="nav-link">
+                        @csrf
+                    <button type="submit" >Logout</button>
+                    </form>
                 </li>
                 @endauth
                 @guest
